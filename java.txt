@@ -1,0 +1,197 @@
+package com.example.shawnimran.calculator;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    Button b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,badd,bsub,bmul,bdiv,bc,beql,bpoint;
+    TextView tvdisplay;
+    double firstnum,secondnum,result;
+    String operation;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        b0 = (Button) findViewById(R.id.btn0);
+        b1 = (Button) findViewById(R.id.btn1);
+        b2 = (Button) findViewById(R.id.btn2);
+        b3 = (Button) findViewById(R.id.btn3);
+        b4 = (Button) findViewById(R.id.btn4);
+        b5 = (Button) findViewById(R.id.btn5);
+        b6 = (Button) findViewById(R.id.btn6);
+        b7 = (Button) findViewById(R.id.btn7);
+        b8 = (Button) findViewById(R.id.btn8);
+        b9 = (Button) findViewById(R.id.btn9);
+        bpoint = (Button) findViewById(R.id.btnpoint);
+        badd = (Button) findViewById(R.id.btnadd);
+        bmul = (Button) findViewById(R.id.btnmul);
+        bsub = (Button) findViewById(R.id.btnsub);
+        bdiv = (Button) findViewById(R.id.btndiv);
+        bc = (Button) findViewById(R.id.btnc);
+        beql = (Button) findViewById(R.id.btnequeal);
+
+
+        tvdisplay = (TextView) findViewById(R.id.display);
+
+    }
+
+    public void method0 (View view)
+    {
+
+        String input = tvdisplay.getText()+"0";
+        tvdisplay.setText(input);
+
+    }
+
+    public void method1 (View view)
+    {
+
+        String input = tvdisplay.getText()+"1";
+        tvdisplay.setText(input);
+    }
+
+    public void method2 (View view)
+    {
+
+        String input = tvdisplay.getText()+"2";
+        tvdisplay.setText(input);
+    }
+
+    public void method3 (View view)
+    {
+
+        String input = tvdisplay.getText()+"3";
+        tvdisplay.setText(input);
+    }
+
+    public void method4 (View view)
+    {
+
+        String input = tvdisplay.getText()+"4";
+        tvdisplay.setText(input);
+    }
+
+    public void method5 (View view)
+    {
+
+        String input = tvdisplay.getText()+"5";
+        tvdisplay.setText(input);
+    }
+
+    public void method6 (View view)
+    {
+
+        String input = tvdisplay.getText()+"6";
+        tvdisplay.setText(input);
+    }
+
+    public void method7 (View view)
+    {
+
+        String input = tvdisplay.getText()+"7";
+        tvdisplay.setText(input);
+    }
+    public void method8 (View view)
+    {
+
+        String input = tvdisplay.getText()+"8";
+        tvdisplay.setText(input);
+    }
+
+    public void method9 (View view)
+    {
+
+        String input = tvdisplay.getText()+"9";
+        tvdisplay.setText(input);
+    }
+
+    public void methodpoint (View view)
+    {
+
+        String input = tvdisplay.getText()+".";
+        tvdisplay.setText(input);
+    }
+
+    public void methodadd (View view)
+    {
+
+        firstnum = Double.parseDouble(tvdisplay.getText().toString());
+        tvdisplay.setText("");
+        operation="+";
+
+    }
+
+    public void methodsub (View view)
+    {
+
+        firstnum = Double.parseDouble(tvdisplay.getText().toString());
+        tvdisplay.setText("");
+        operation="-";
+
+    }
+
+    public void methodmul (View view)
+    {
+        firstnum = Double.parseDouble(tvdisplay.getText().toString());
+        tvdisplay.setText("");
+        operation="*";
+
+    }
+
+    public void methoddiv (View view)
+    {
+
+        firstnum = Double.parseDouble(tvdisplay.getText().toString());
+        tvdisplay.setText("");
+        operation="/";
+
+    }
+
+    public void methodeql (View view)
+    {
+        String ans;
+        secondnum = Double.parseDouble(tvdisplay.getText().toString());
+        switch (operation)
+        {
+            case "+" :
+                    result = firstnum + secondnum;
+                ans = Double.toString(result);
+                    tvdisplay.setText(ans);
+                    break;
+
+            case "-" :
+                result = firstnum - secondnum;
+                ans = Double.toString(result);
+                tvdisplay.setText(ans);
+                break;
+
+            case "*" :
+                result = firstnum * secondnum;
+                ans = Double.toString(result);
+                tvdisplay.setText(ans);
+                break;
+
+            case "/" :
+                result = firstnum / secondnum;
+                ans = Double.toString(result);
+                tvdisplay.setText(ans);
+                break;
+        }
+
+
+    }
+
+    public void methodc (View view)
+    {
+
+        tvdisplay.setText("");
+
+    }
+
+}
